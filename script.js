@@ -4,18 +4,23 @@ const submit = document.getElementById("submit");
 const btns = document.querySelectorAll(".btns button");
 const selected = document.getElementById("selected");
 const rating = document.getElementById("rating");
-
+let ratings = "";
 console.log(btns);
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    document.getElementById("error").style.display = "none";
     btns.forEach((btn) => btn.classList.remove("active"));
     btn.classList.add("active");
-    const rating = btn.innerHTML;
-    selected.innerText = `You selected ${rating} out of 5`;
+    ratings = btn.innerHTML;
   });
 });
 
 submit.addEventListener("click", () => {
-  box1.style.display = "none";
-  box2.style.display = "flex";
+  if (ratings === "") {
+    document.getElementById("error").style.display = "block";
+  } else {
+    box1.style.display = "none";
+    box2.style.display = "flex";
+    selected.innerText = `You selected ${ratings} out of 5`;
+  }
 });
