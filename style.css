@@ -72,21 +72,29 @@ body {
   align-items: center;
   gap: 10px;
 }
+
 .btns button {
   width: 40px;
   height: 40px;
   border: none;
-  color: #98a1aad6;
   background-color: #2a333ce9;
   color: var(--White);
   border-radius: 50%;
   font-weight: 500;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
 .btns button:hover {
-  transition: 0.5s ease;
   background-color: var(--Orange);
+  color: var(--White);
   cursor: pointer;
 }
+
+.btns button.active {
+  background-color: var(--White);
+  color: var(--DarkBlue);
+}
+
 #box2 {
   display: flex;
   justify-content: center;
@@ -107,11 +115,4 @@ body {
   color: var(--Orange);
   font-size: 15px;
   font-weight: 500;
-}
-.color {
-  background-color: white;
-}
-.btns button.active {
-  background-color: var(--White);
-  color: var(--DarkBlue);
 }
